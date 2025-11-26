@@ -20,14 +20,13 @@ PaymentForm.include({
             if (providerCode != "atix"){
                 return this._super(...arguments)
             }
-            console.log(processingValues)
-            console.log(paymentMethodCode)
 
             loadScript(processingValues.url_atix_js)
             .then(()=>{
                 console.log(processingValues)
                 $.fn.GBCPE_PaymentGateway.setup.Apikey = processingValues.atix_apikey;
                 $.fn.GBCPE_PaymentGateway.setup.Email = processingValues.partner_email //valor opcional;
+                $.fn.GBCPE_PaymentGateway.setup.Phone = processingValues.partner_phone;
                 $.fn.GBCPE_PaymentGateway.setup.Currency = processingValues.currency_name;
                 $.fn.GBCPE_PaymentGateway.setup.Totalamount = processingValues.amount;
                 $.fn.GBCPE_PaymentGateway.setup.Reference = processingValues.reference;

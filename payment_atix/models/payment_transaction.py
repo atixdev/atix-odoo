@@ -33,7 +33,9 @@ class PaymentTransaction(models.Model):
         }
         res.update(atix_apikey=API_KEY.get(self.currency_id.name, "*") or "*", 
                     tx_id=self.id,
-                    url_atix_js=URL_ATIX_JS[self.provider_id.state])
+                    url_atix_js=URL_ATIX_JS[self.provider_id.state],
+                    partner_email=self.partner_id.email or "",
+                    partner_phone=self.partner_id.phone or "")
         return res
 
     def _get_specific_rendering_values(self, processing_values):
