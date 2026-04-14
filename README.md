@@ -2,10 +2,6 @@
 
 Integrates the [ATIX](https://www.atix.com.pe) payment gateway into Odoo's e-commerce checkout. Supports credit/debit card payments in **PEN (Peruvian Soles)** and **USD (US Dollars)** via a popup widget.
 
-**Odoo version:** 18.0
-**License:** OPL-1 (Odoo Proprietary License)  
-**Author:** ATIX
-
 ---
 
 ## Table of Contents
